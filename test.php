@@ -63,10 +63,7 @@ if(isset($_POST["submit"]))
  else
  {
   $email = clean_text($_POST["email"]);
-  if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-  {
-   $error .= '<p><label class="text-danger">Invalid email format</label></p>';
-  }
+
  }
  if(empty($_POST["subject"]))
  {
@@ -76,14 +73,7 @@ if(isset($_POST["submit"]))
  {
   $subject = clean_text($_POST["subject"]);
  }
- if(empty($_POST["message"]))
- {
-  $error .= '<p><label class="text-danger">Message is required</label></p>';
- }
- else
- {
-  $message = clean_text($_POST["message"]);
- }
+
 
  if($error == '')
  {
@@ -101,7 +91,7 @@ if(isset($_POST["submit"]))
    'message' => $message
   );
   fputcsv($file_open, $form_data);
-  $error = '<label class="text-success">Thank you for contacting us</label>';
+  $error = '<label class="text-success">Gewoon bedankt ofzo voor de inzending</label>';
   $name = '';
   $email = '';
   $subject = '';
@@ -128,15 +118,15 @@ if(isset($_POST["submit"]))
      <?php echo $error; ?>
      <div class="form-group">
       <label>Enter Artist Name</label>
-      <input type="text" name="ArtistName" placeholder="ArtistName" class="form-control" value="<?php echo $name; ?>" />
+      <input type="text" name="name" placeholder="ArtistName" class="form-control" value="<?php echo $name; ?>" />
      </div>
      <div class="form-group">
       <label>Enter Song Name</label>
-      <input type="text" name="SongTitle" class="form-control" placeholder="SongTitle" value="<?php echo $email; ?>" />
+      <input type="text" name="email" class="form-control" placeholder="SongTitle" value="<?php echo $email; ?>" />
      </div>
      <div class="form-group">
       <label>Enter PlaybackId</label>
-      <input type="text" name="playbackID" class="form-control" placeholder="PlaybackId" value="<?php echo $subject; ?>" />
+      <input type="text" name="subject" class="form-control" placeholder="PlaybackId" value="<?php echo $subject; ?>" />
      </div>
      <div class="form-group" align="center">
       <input type="submit" name="submit" class="btn btn-info" value="Submit" />
