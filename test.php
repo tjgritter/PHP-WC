@@ -113,7 +113,7 @@ if(isset($_POST["submit"]))
 <!DOCTYPE html>
 <html>
  <head>
-  <title>How to Store Form data in CSV File using PHP</title>
+  <title>Upload</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -121,28 +121,22 @@ if(isset($_POST["submit"]))
  <body>
   <br />
   <div class="container">
-   <h2 align="center">How to Store Form data in CSV File using PHP</h2>
+   <h2 align="center">Beheer videos</h2>
    <br />
    <div class="col-md-6" style="margin:0 auto; float:none;">
     <form method="post">
-     <h3 align="center">Contact Form</h3>
-     <br />
      <?php echo $error; ?>
      <div class="form-group">
-      <label>Enter Name</label>
-      <input type="text" name="name" placeholder="Enter Name" class="form-control" value="<?php echo $name; ?>" />
+      <label>Enter Artist Name</label>
+      <input type="text" name="ArtistName" placeholder="ArtistName" class="form-control" value="<?php echo $name; ?>" />
      </div>
      <div class="form-group">
-      <label>Enter Email</label>
-      <input type="text" name="email" class="form-control" placeholder="Enter Email" value="<?php echo $email; ?>" />
+      <label>Enter Song Name</label>
+      <input type="text" name="SongTitle" class="form-control" placeholder="SongTitle" value="<?php echo $email; ?>" />
      </div>
      <div class="form-group">
-      <label>Enter Subject</label>
-      <input type="text" name="subject" class="form-control" placeholder="Enter Subject" value="<?php echo $subject; ?>" />
-     </div>
-     <div class="form-group">
-      <label>Enter Message</label>
-      <textarea name="message" class="form-control" placeholder="Enter Message"><?php echo $message; ?></textarea>
+      <label>Enter PlaybackId</label>
+      <input type="text" name="playbackID" class="form-control" placeholder="PlaybackId" value="<?php echo $subject; ?>" />
      </div>
      <div class="form-group" align="center">
       <input type="submit" name="submit" class="btn btn-info" value="Submit" />
